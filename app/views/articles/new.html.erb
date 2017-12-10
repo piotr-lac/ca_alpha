@@ -3,6 +3,17 @@
   required form
 </h1>
 
+<% if @article.errors.any? %>
+<h3>
+  Poniżej błędy przy zapisie
+</h1>
+<ul>
+   <% @article.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_for @article do |f| %>
   <p>
     tytul :
@@ -18,3 +29,4 @@
   </p>
 <% end %>
 
+<%= link_to "strona index", articles_path %>
