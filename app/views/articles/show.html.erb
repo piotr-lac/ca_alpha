@@ -10,6 +10,6 @@
   Opis : <%= @article.description %>
 </p>
 
-<%= link_to "edytuj", edit_article_path %>
+<%= link_to "edytuj", edit_article_path(@article.id) %>
 
 <%= link_to "strona index", articles_path %>

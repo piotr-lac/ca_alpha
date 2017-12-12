@@ -8,7 +8,7 @@
 </h1>
 <ul>
    <% @article.errors.full_messages.each do |msg| %>
-    <li> <%= msg %> </li>
+    <li> <%= msg == "Title can't be blank" ? "pusty tytul" : msg == "Description can't be blank" ? "pusty opis" : msg %> </li>
   <% end %>
 </ul>
 <% end %>

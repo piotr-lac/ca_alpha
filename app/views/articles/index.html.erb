@@ -2,4 +2,23 @@
   strona articles index
 </h1>
 
+<table>
+  <tr> 
+    <th> Tytul </th>
+    <th> Opis </th>
+    <th> Pokaż </th>
+    <th> Edytuj </th>
+  </tr>
+   <% @articles.each do |article| %>
+  <tr>
+  <td> <%= article.title %> </td>
+  <td> <%= article.description %> </td> 
+  <td> <%= link_to "show", article_path(article.id) %> </td>
+  <td> <%= link_to "edit", edit_article_path(article.id) %> </td>
+  </tr>
+  <% end %>
+  
+</table>
+
+
 <%= link_to "nowy artykul", new_article_path %>
